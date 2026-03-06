@@ -308,9 +308,10 @@ Este es un proyecto personal para portafolio. Si encuentras bugs o tienes sugere
 
 <div align="center">
 
-[![GitHub](https://img.shields.io/badge/GitHub-@Github-181717?style=for-the-badge&logo=github)](https://github.com/SaulVaz)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Linkedin-0077B5?style=for-the-badge&logo=linkedin)](www.linkedin.com/in/saul-vazquez-del-rio)
-[![Portfolio](https://img.shields.io/badge/Portfolio-tu--portfolio.com-FF5722?style=for-the-badge&logo=google-chrome&logoColor=white)](https://tu-portfolio.com)
+**Saul Vazquez del Rio**
+
+[![GitHub](https://img.shields.io/badge/GitHub-@SaulVaz-181717?style=for-the-badge&logo=github)](https://github.com/SaulVaz)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Saul%20Vazquez-0077B5?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/saul-vazquez-del-rio)
 
 </div>
 
