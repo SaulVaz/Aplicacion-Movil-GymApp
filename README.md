@@ -1,18 +1,32 @@
 <div align="center">
 🏋️ GymApp - Full Stack
-Aplicación completa de gestión de rutinas de gimnasio
-Características • Tecnologías • Instalación • Documentación
+### Aplicación completa de gestión de rutinas de gimnasio
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![Node](https://img.shields.io/badge/node-%3E%3D20.0.0-brightgreen)](https://nodejs.org)
+[![React Native](https://img.shields.io/badge/react--native-0.81.5-61dafb)](https://reactnative.dev)
+[![PostgreSQL](https://img.shields.io/badge/postgresql-15+-316192)](https://www.postgresql.org)
+
+[Características](#-características) • [Tecnologías](#-tecnologías) • [Instalación](#-quick-start) • [Documentación](#-documentación-detallada)
+
 </div>
 
-📸 Preview
-<img width="212" height="464" alt="image" src="https://github.com/user-attachments/assets/13df9b35-11bf-4efd-84ca-e29d5a2d7c3c" />
-<img width="212" height="464" alt="image" src="https://github.com/user-attachments/assets/e4b15e93-3293-48ce-850e-bac0effd933a" />
-<img width="212" height="464" alt="image" src="https://github.com/user-attachments/assets/d088b654-9714-4785-9365-110f7288aad8" />
-<img width="212" height="464" alt="image" src="https://github.com/user-attachments/assets/d3cd0928-f0f5-4616-8d3c-b60f137866da" />
-<img width="212" height="464" alt="image" src="https://github.com/user-attachments/assets/525e2027-a63f-4e8b-bd56-ae596ed466c7" />
+---
 
+## 📸 Preview
 
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/13df9b35-11bf-4efd-84ca-e29d5a2d7c3c" alt="Welcome Screen" width="200"/>
+  <img src="https://github.com/user-attachments/assets/e4b15e93-3293-48ce-850e-bac0effd933a" alt="Login Screen" width="200"/>
+  <img src="https://github.com/user-attachments/assets/d088b654-9714-4785-9365-110f7288aad8" alt="Routines Screen" width="200"/>
+  <img src="https://github.com/user-attachments/assets/d3cd0928-f0f5-4616-8d3c-b60f137866da" alt="Exercises Screen" width="200"/>
+</div>
 
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/525e2027-a63f-4e8b-bd56-ae596ed466c7" alt="Profile Screen" width="200"/>
+</div>
+
+---
 
 📁 Estructura del Proyecto
 gym-app/
