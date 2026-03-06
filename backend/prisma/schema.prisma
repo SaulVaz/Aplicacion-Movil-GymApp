@@ -1,0 +1,191 @@
+// ============================================================
+//  GYM APP - Schema de Base de Datos
+//  ORM: Prisma | DB: PostgreSQL
+// ============================================================
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ============================================================
+//  ROLES DE USUARIO
+// ============================================================
+
+enum Role {
+  USER   // Usuario normal
+  ADMIN  // Puede crear rutinas predefinidas
+}
+
+// ============================================================
+//  USUARIOS
+// ============================================================
+
+model User {
+  id           Int      @id @default(autoincrement())
+  name         String   @db.VarChar(100)
+  email        String   @unique @db.VarChar(150)
+  passwordHash String   @map("password_hash")
+  role         Role     @default(USER)
+
+  // Datos físicos del perfil
+  weight       Float?   // en kg
+  height       Float?   // en cm
+  birthDate    DateTime? @map("birth_date")
+  bio          String?  @db.Text
+
+  createdAt    DateTime @default(now()) @map("created_at")
+  updatedAt    DateTime @updatedAt @map("updated_at")
+
+  // Relaciones
+  routines         Routine[]
+  workoutSessions  WorkoutSession[]
+  favoriteRoutines FavoriteRoutine[]
+
+  @@map("users")
+}
+
+// ============================================================
+//  GRUPOS MUSCULARES
+// ============================================================
+
+model MuscleGroup {
+  id        Int        @id @default(autoincrement())
+  name      String     @unique @db.VarChar(50) // pecho, espalda, piernas...
+  exercises Exercise[]
+
+  @@map("muscle_groups")
+}
+
+// ============================================================
+//  EJERCICIOS (catálogo global)
+// ============================================================
+
+model Exercise {
+  id            Int         @id @default(autoincrement())
+  name          String      @db.VarChar(100)
+  description   String?     @db.Text
+  muscleGroupId Int         @map("muscle_group_id")
+  muscleGroup   MuscleGroup @relation(fields: [muscleGroupId], references: [id])
+
+  createdAt DateTime @default(now()) @map("created_at")
+
+  // Relaciones
+  routineExercises RoutineExercise[]
+
+  @@map("exercises")
+}
+
+// ============================================================
+//  RUTINAS
+//  - user_id NULL + is_predefined TRUE  => rutina del sistema (creada por ADMIN)
+//  - user_id NOT NULL + is_predefined FALSE => rutina creada por el usuario
+// ============================================================
+
+model Routine {
+  id           Int      @id @default(autoincrement())
+  name         String   @db.VarChar(100)
+  description  String?  @db.Text
+  isPredefined Boolean  @default(false) @map("is_predefined")
+  userId       Int?     @map("user_id")   // NULL si es predefinida
+  user         User?    @relation(fields: [userId], references: [id])
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  // Relaciones
+  routineExercises RoutineExercise[]
+  workoutSessions  WorkoutSession[]
+  favoritedBy      FavoriteRoutine[]
+
+  @@map("routines")
+}
+
+// ============================================================
+//  EJERCICIOS DENTRO DE UNA RUTINA
+//  Define qué ejercicios tiene la rutina y cómo hacerlos
+// ============================================================
+
+model RoutineExercise {
+  id           Int      @id @default(autoincrement())
+  routineId    Int      @map("routine_id")
+  routine      Routine  @relation(fields: [routineId], references: [id], onDelete: Cascade)
+  exerciseId   Int      @map("exercise_id")
+  exercise     Exercise @relation(fields: [exerciseId], references: [id])
+
+  sets         Int      // número de series
+  reps         Int      // repeticiones por serie
+  restSeconds  Int      @map("rest_seconds") // segundos de descanso
+  notes        String?  @db.Text // notas del ejercicio en esta rutina
+  order        Int      // orden dentro de la rutina (1, 2, 3...)
+
+  // Relaciones
+  workoutSets WorkoutSet[]
+
+  @@map("routine_exercises")
+}
+
+// ============================================================
+//  SESIÓN DE ENTRENAMIENTO (historial)
+//  Cada vez que un usuario hace una rutina, se crea una sesión
+// ============================================================
+
+model WorkoutSession {
+  id         Int      @id @default(autoincrement())
+  userId     Int      @map("user_id")
+  user       User     @relation(fields: [userId], references: [id])
+  routineId  Int      @map("routine_id")
+  routine    Routine  @relation(fields: [routineId], references: [id])
+
+  startedAt  DateTime  @default(now()) @map("started_at")
+  finishedAt DateTime? @map("finished_at") // NULL si no ha terminado
+  notes      String?   @db.Text           // notas generales de la sesión
+
+  // Relaciones
+  workoutSets WorkoutSet[]
+
+  @@map("workout_sessions")
+}
+
+// ============================================================
+//  SETS REALIZADOS EN UNA SESIÓN (registro detallado)
+//  Guarda exactamente qué hizo el usuario: peso, reps, notas
+// ============================================================
+
+model WorkoutSet {
+  id                Int              @id @default(autoincrement())
+  sessionId         Int              @map("session_id")
+  session           WorkoutSession   @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+  routineExerciseId Int              @map("routine_exercise_id")
+  routineExercise   RoutineExercise  @relation(fields: [routineExerciseId], references: [id])
+
+  setNumber    Int    @map("set_number") // número de serie (1, 2, 3...)
+  repsActual   Int    @map("reps_actual") // reps que realmente hizo
+  weightKg     Float? @map("weight_kg")   // peso usado en kg (puede ser null)
+  restSeconds  Int?   @map("rest_seconds") // descanso real tomado
+  notes        String? @db.Text           // notas del set
+
+  performedAt  DateTime @default(now()) @map("performed_at")
+
+  @@map("workout_sets")
+}
+
+// ============================================================
+//  RUTINAS FAVORITAS
+//  Tabla pivote entre usuarios y rutinas
+// ============================================================
+
+model FavoriteRoutine {
+  userId    Int      @map("user_id")
+  user      User     @relation(fields: [userId], references: [id])
+  routineId Int      @map("routine_id")
+  routine   Routine  @relation(fields: [routineId], references: [id])
+  savedAt   DateTime @default(now()) @map("saved_at")
+
+  @@id([userId, routineId]) // clave compuesta: un user no puede favoritear la misma rutina dos veces
+  @@map("favorite_routines")
+}
