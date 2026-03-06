@@ -1,10 +1,6 @@
 <div align="center">
 🏋️ GymApp - Full Stack
 Aplicación completa de gestión de rutinas de gimnasio
-Mostrar imagen
-Mostrar imagen
-Mostrar imagen
-Mostrar imagen
 Características • Tecnologías • Instalación • Documentación
 </div>
 
@@ -209,10 +205,10 @@ MIT License - Libre para usar, modificar y distribuir
 
 👨‍💻 Autor
 <div align="center">
-Tu Nombre
-Mostrar imagen
-Mostrar imagen
-Mostrar imagen
+Saul
+Github User: SaulVaz
+Linkedin: www.linkedin.com/in/saul-vazquez-del-rio
+Portafolio: 
 </div>
 
 🎯 Habilidades Demostradas
