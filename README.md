@@ -5,8 +5,13 @@ Características • Tecnologías • Instalación • Documentación
 </div>
 
 📸 Preview
+<img width="412" height="864" alt="image" src="https://github.com/user-attachments/assets/13df9b35-11bf-4efd-84ca-e29d5a2d7c3c" />
+<img width="419" height="862" alt="image" src="https://github.com/user-attachments/assets/e4b15e93-3293-48ce-850e-bac0effd933a" />
+<img width="404" height="858" alt="image" src="https://github.com/user-attachments/assets/d088b654-9714-4785-9365-110f7288aad8" />
+<img width="404" height="862" alt="image" src="https://github.com/user-attachments/assets/d3cd0928-f0f5-4616-8d3c-b60f137866da" />
+<img width="416" height="858" alt="image" src="https://github.com/user-attachments/assets/525e2027-a63f-4e8b-bd56-ae596ed466c7" />
 
-Agrega aquí capturas de pantalla de tu aplicación
+
 
 
 📁 Estructura del Proyecto
@@ -205,7 +210,6 @@ MIT License - Libre para usar, modificar y distribuir
 
 👨‍💻 Autor
 <div align="center">
-Saul
 Github User: SaulVaz
 Linkedin: www.linkedin.com/in/saul-vazquez-del-rio
 Portafolio: 
