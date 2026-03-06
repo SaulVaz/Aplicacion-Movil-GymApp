@@ -1,96 +1,108 @@
+<div align="center">
 🏋️ GymApp - Full Stack
-Aplicación completa de gestión de rutinas de gimnasio con backend REST API y aplicación móvil multiplataforma.
+Aplicación completa de gestión de rutinas de gimnasio
+Mostrar imagen
+Mostrar imagen
+Mostrar imagen
+Mostrar imagen
+Características • Tecnologías • Instalación • Documentación
+</div>
 
 📸 Preview
+
+Agrega aquí capturas de pantalla de tu aplicación
 
 
 📁 Estructura del Proyecto
 gym-app/
-├── backend/          # API REST - Node.js + Express + PostgreSQL
-├── frontend/         # App móvil - React Native + Expo
-└── README.md         # Este archivo
-
-/backend - API REST con autenticación JWT y base de datos relacional
-/frontend - Aplicación móvil multiplataforma (iOS/Android)
-
+├── backend/          # 🔧 API REST - Node.js + Express + PostgreSQL + Prisma
+├── frontend/         # 📱 App móvil - React Native + Expo
+└── README.md         # 📖 Este archivo
+DirectorioDescripciónTecnologíasbackend/API REST con autenticación JWTNode.js, Express, PostgreSQL, Prismafrontend/App móvil multiplataformaReact Native, Expo, React Navigation
 
 🚀 Tecnologías
+<table>
+<tr>
+<td width="50%" valign="top">
 Backend
 
-Node.js - Runtime JavaScript
-Express - Framework web
-PostgreSQL - Base de datos relacional
-Prisma ORM - Object-Relational Mapping
-JWT - Autenticación con tokens
-bcryptjs - Hash de contraseñas
+Runtime: Node.js v20+
+Framework: Express
+Base de datos: PostgreSQL
+ORM: Prisma v5
+Autenticación: JWT + bcryptjs
+Validación: Express middleware
 
+</td>
+<td width="50%" valign="top">
 Frontend
 
-React Native - Framework móvil
-Expo - Toolchain y SDK
-React Navigation - Navegación entre pantallas
-Axios - Cliente HTTP
-AsyncStorage - Persistencia local
-Ionicons - Iconos vectoriales
+Framework: React Native
+SDK: Expo
+Navegación: React Navigation
+HTTP Client: Axios
+Storage: AsyncStorage
+Iconos: Ionicons
 
+</td>
+</tr>
+</table>
 
 ✨ Características
-Backend API
+<details>
+<summary><b>🔐 Backend API (20+ endpoints)</b></summary>
 
 ✅ Autenticación JWT con roles (USER/ADMIN)
 ✅ CRUD completo de rutinas de entrenamiento
 ✅ Gestión de ejercicios por grupos musculares
 ✅ Sistema de favoritos
-✅ Registro de sesiones de entrenamiento con sets detallados
+✅ Registro de sesiones con sets detallados
 ✅ Historial completo de entrenamientos
-✅ 20+ endpoints REST documentados
+✅ Validaciones y manejo de errores
 
-Frontend Mobile
+</details>
+<details>
+<summary><b>📱 Frontend Mobile</b></summary>
 
 ✅ Diseño minimalista (negro/blanco/rojo)
-✅ Autenticación persistente
+✅ Autenticación persistente con AsyncStorage
 ✅ Rutinas predefinidas y personalizadas
-✅ Catálogo de ejercicios con filtros
-✅ Creación de rutinas con configuración detallada
-✅ Entrenamiento en tiempo real
-✅ Historial de progreso
-✅ Perfil con estadísticas
+✅ Catálogo de 19 ejercicios con filtros
+✅ Creación de rutinas con configuración de sets/reps
+✅ Entrenamiento en tiempo real con registro de peso
+✅ Historial de progreso con estadísticas
+✅ Perfil de usuario personalizable
 
+</details>
 
 🗄️ Modelo de Base de Datos
 El sistema utiliza 8 tablas relacionales en PostgreSQL:
-
-users - Usuarios con autenticación y datos físicos
-muscle_groups - Catálogo de grupos musculares
-exercises - Catálogo global de ejercicios
-routines - Rutinas predefinidas y personalizadas
-routine_exercises - Ejercicios dentro de cada rutina
-workout_sessions - Historial de entrenamientos
-workout_sets - Registro detallado de cada serie
-favorite_routines - Relación usuarios-rutinas favoritas
-
+users (autenticación y datos físicos)
+  ├─ routines (rutinas personalizadas)
+  │   └─ routine_exercises (ejercicios con sets/reps)
+  │       └─ exercises (catálogo global)
+  │           └─ muscle_groups (grupos musculares)
+  ├─ workout_sessions (historial)
+  │   └─ workout_sets (sets individuales)
+  └─ favorite_routines (favoritos)
 
 ⚡ Quick Start
 Requisitos Previos
-
-Node.js v20.19 o superior
-PostgreSQL instalado y corriendo
-Expo Go (para probar la app móvil)
-
-1️⃣ Clonar el repositorio
+bashNode.js >= 20.19
+PostgreSQL >= 15
+Expo Go (app móvil para iOS/Android)
+1️⃣ Clonar repositorio
 bashgit clone https://github.com/TU-USUARIO/gym-app.git
 cd gym-app
-2️⃣ Configurar Backend
+2️⃣ Backend Setup
 bashcd backend
 
 # Instalar dependencias
 npm install
 
-# Crear archivo .env (ver backend/.env.example)
+# Configurar variables de entorno
 cp .env.example .env
-
 # Editar .env con tus credenciales de PostgreSQL
-# DATABASE_URL="postgresql://usuario:password@localhost:5432/gymapp_db"
 
 # Crear base de datos
 psql -U postgres -c "CREATE DATABASE gymapp_db;"
@@ -103,8 +115,8 @@ node prisma/seed.js
 
 # Iniciar servidor
 npm run dev
-El servidor estará corriendo en http://localhost:3000
-3️⃣ Configurar Frontend
+✅ Backend corriendo en http://localhost:3000
+3️⃣ Frontend Setup
 bashcd frontend
 
 # Instalar dependencias
@@ -116,69 +128,107 @@ npm install
 
 # Iniciar Expo
 npx expo start
-Escanea el QR con Expo Go desde tu dispositivo móvil.
+📱 Escanea el QR con Expo Go desde tu dispositivo móvil
 
 📚 Documentación Detallada
+DocumentaciónDescripciónBackend READMEInstalación, endpoints, autenticación, ejemplosFrontend READMEConfiguración, estructura, componentes, diseño
 
-Backend README - Instalación, endpoints, ejemplos de API
-Frontend README - Configuración, estructura, diseño
-
-
-🎨 Diseño
-La aplicación utiliza un esquema de colores minimalista y moderno:
-
-Negro (#000) - Fondo principal
-Gris oscuro (#111) - Cards y componentes
-Rojo (#FF0000) - Acciones principales y acentos
-Blanco (#FFF) - Texto principal
-Grises (#666, #999) - Texto secundario
-
+🎨 Paleta de Colores
+css--negro:        #000000  /* Fondo principal */
+--gris-oscuro:  #111111  /* Cards y componentes */
+--rojo:         #FF0000  /* Acciones principales */
+--blanco:       #FFFFFF  /* Texto principal */
+--gris-medio:   #666666  /* Iconos inactivos */
+--gris-claro:   #999999  /* Texto secundario */
 
 🔄 Flujo de Usuario
+mermaidgraph LR
+    A[Registro/Login] --> B[Dashboard]
+    B --> C[Ver Rutinas]
+    C --> D[Crear Rutina]
+    C --> E[Iniciar Entrenamiento]
+    E --> F[Registrar Sets]
+    F --> G[Finalizar]
+    G --> H[Ver Historial]
 
-Registro/Login → Autenticación con JWT
-Explorar rutinas → Ver predefinidas o crear personalizadas
-Iniciar entrenamiento → Seleccionar rutina
-Registrar progreso → Peso y repeticiones por set
-Ver historial → Estadísticas y progreso
+Autenticación → Registro o login con JWT
+Explorar → Ver rutinas predefinidas o crear personalizadas
+Entrenar → Seleccionar rutina e iniciar sesión
+Registrar → Peso y repeticiones por cada set
+Progreso → Ver historial y estadísticas
 
+
+📡 Endpoints Principales
+<details>
+<summary><b>Ver lista completa de endpoints</b></summary>
+Autenticación
+httpPOST /api/auth/register
+POST /api/auth/login
+Usuarios
+httpGET  /api/users/profile
+PUT  /api/users/profile
+Ejercicios
+httpGET  /api/exercises
+GET  /api/exercises/muscle-groups
+POST /api/exercises (admin)
+Rutinas
+httpGET    /api/routines
+GET    /api/routines/:id
+POST   /api/routines
+DELETE /api/routines/:id
+POST   /api/routines/:id/favorite
+Sesiones
+httpGET   /api/sessions
+POST  /api/sessions
+POST  /api/sessions/:id/sets
+PATCH /api/sessions/:id/finish
+</details>
 
 🚧 Roadmap
-Funcionalidades planeadas:
 
- Gráficas de progreso con peso/repeticiones
- Editar rutinas existentes
+ Gráficas de progreso (peso/reps a lo largo del tiempo)
+ Edición de rutinas existentes
  Temporizador de descanso entre sets
  Fotos de progreso (antes/después)
  Compartir rutinas entre usuarios
- Modo oscuro/claro
+ Modo claro/oscuro
  Notificaciones push
- Deploy a producción
+ Deploy a producción (Railway + Vercel)
 
 
 🤝 Contribuciones
-Este es un proyecto personal para portafolio. Si encuentras algún bug o tienes sugerencias, siéntete libre de abrir un issue.
+Este es un proyecto personal para portafolio. Si encuentras bugs o tienes sugerencias:
+
+🐛 Abre un Issue
+🔧 Crea un Pull Request
+⭐ Dale una estrella al repo
+
 
 📄 Licencia
-MIT License - ver LICENSE para más detalles.
+MIT License - Libre para usar, modificar y distribuir
 
 👨‍💻 Autor
-SaulVaz
+<div align="center">
+Tu Nombre
+Mostrar imagen
+Mostrar imagen
+Mostrar imagen
+</div>
 
-GitHub: SaulVaz
-LinkedIn: www.linkedin.com/in/saul-vazquez-del-rio
-Portfolio: 
+🎯 Habilidades Demostradas
+Este proyecto full-stack demuestra competencia en:
+
+✅ Arquitectura de aplicaciones escalables
+✅ Diseño e implementación de APIs REST
+✅ Desarrollo móvil multiplataforma
+✅ Modelado de bases de datos relacionales
+✅ Autenticación y seguridad (JWT, bcrypt)
+✅ UI/UX moderno y accesible
+✅ Git workflow y versionado
+✅ Documentación técnica completa
 
 
-🙏 Agradecimientos
-Proyecto desarrollado como parte de mi portafolio de desarrollo full-stack, demostrando habilidades en:
-
-Arquitectura de aplicaciones full-stack
-Diseño de APIs REST
-Desarrollo móvil multiplataforma
-Bases de datos relacionales
-Autenticación y seguridad
-UI/UX moderno y funcional
-
-
-⭐ Si este proyecto te resultó útil o interesante, considera darle una estrella en GitHub.
+<div align="center">
+⭐ Si este proyecto te pareció útil o interesante, considera darle una estrella
+Desarrollado con ❤️ para demostrar habilidades full-stack
+</div>
