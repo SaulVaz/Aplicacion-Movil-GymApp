@@ -78,7 +78,7 @@ const updateProfile = async (req, res) => {
     });
 
     res.json({
-      message: '✅ Perfil actualizado',
+      message: 'Perfil actualizado',
       user: updatedUser,
     });
 

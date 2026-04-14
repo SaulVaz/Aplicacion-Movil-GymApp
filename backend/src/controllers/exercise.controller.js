@@ -75,7 +75,7 @@ const createExercise = async (req, res) => {
       include: { muscleGroup: true }
     });
 
-    res.status(201).json({ message: '✅ Ejercicio creado', exercise });
+    res.status(201).json({ message: 'Ejercicio creado', exercise });
 
   } catch (error) {
     console.error('Error en createExercise:', error);

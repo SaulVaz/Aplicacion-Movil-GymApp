@@ -52,7 +52,7 @@ const register = async (req, res) => {
     );
 
     res.status(201).json({
-      message: '✅ Usuario registrado exitosamente',
+      message: 'Usuario registrado exitosamente',
       token,
       user,
     });
@@ -98,7 +98,7 @@ const login = async (req, res) => {
     );
 
     res.json({
-      message: '✅ Login exitoso',
+      message: ' Login exitoso',
       token,
       user: {
         id:    user.id,

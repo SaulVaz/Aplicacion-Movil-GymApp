@@ -118,7 +118,7 @@ const startSession = async (req, res) => {
       }
     });
 
-    res.status(201).json({ message: '💪 Sesión iniciada', session });
+    res.status(201).json({ message: 'Sesión iniciada', session });
 
   } catch (error) {
     console.error('Error en startSession:', error);
@@ -165,7 +165,7 @@ const addSet = async (req, res) => {
       }
     });
 
-    res.status(201).json({ message: '✅ Set registrado', workoutSet });
+    res.status(201).json({ message: 'Set registrado', workoutSet });
 
   } catch (error) {
     console.error('Error en addSet:', error);

@@ -143,7 +143,7 @@ const createRoutine = async (req, res) => {
       }
     });
 
-    res.status(201).json({ message: '✅ Rutina creada', routine });
+    res.status(201).json({ message: 'Rutina creada', routine });
 
   } catch (error) {
     console.error('Error en createRoutine:', error);
@@ -170,7 +170,7 @@ const deleteRoutine = async (req, res) => {
 
     await prisma.routine.delete({ where: { id: parseInt(id) } });
 
-    res.json({ message: '✅ Rutina eliminada' });
+    res.json({ message: 'Rutina eliminada' });
 
   } catch (error) {
     console.error('Error en deleteRoutine:', error);
@@ -198,11 +198,11 @@ const toggleFavorite = async (req, res) => {
       await prisma.favoriteRoutine.delete({
         where: { userId_routineId: { userId, routineId } }
       });
-      return res.json({ message: '💔 Rutina quitada de favoritos', isFavorite: false });
+      return res.json({ message: 'Rutina quitada de favoritos', isFavorite: false });
     } else {
       // Agregar a favoritos
       await prisma.favoriteRoutine.create({ data: { userId, routineId } });
-      return res.json({ message: '⭐ Rutina agregada a favoritos', isFavorite: true });
+      return res.json({ message: 'Rutina agregada a favoritos', isFavorite: true });
     }
 
   } catch (error) {
