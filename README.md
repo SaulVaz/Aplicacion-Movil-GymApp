@@ -1,5 +1,5 @@
 <div align="center">
-🏋️ GymApp - Full Stack
+ GymApp - Full Stack
 ### Aplicación completa de gestión de rutinas de gimnasio
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
@@ -28,13 +28,13 @@
 
 ---
 
-📁 Estructura del Proyecto
+ Estructura del Proyecto
 
 ```
 gym-app/
-├── backend/          # 🔧 API REST - Node.js + Express + PostgreSQL + Prisma
-├── frontend/         # 📱 App móvil - React Native + Expo
-└── README.md         # 📖 Este archivo
+├── backend/          #  API REST - Node.js + Express + PostgreSQL + Prisma
+├── frontend/         #  App móvil - React Native + Expo
+└── README.md         #  Este archivo
 ```
 
 | Directorio | Descripción | Tecnologías |
@@ -44,7 +44,7 @@ gym-app/
 
 ---
 
-## 🚀 Tecnologías
+##  Tecnologías
 
 <table>
 <tr>
@@ -75,38 +75,38 @@ gym-app/
 
 ---
 
-## ✨ Características
+##  Características
 
 <details>
-<summary><b>🔐 Backend API (20+ endpoints)</b></summary>
+<summary><b> Backend API (20+ endpoints)</b></summary>
 
-- ✅ Autenticación JWT con roles (USER/ADMIN)
-- ✅ CRUD completo de rutinas de entrenamiento
-- ✅ Gestión de ejercicios por grupos musculares
-- ✅ Sistema de favoritos
-- ✅ Registro de sesiones con sets detallados
-- ✅ Historial completo de entrenamientos
-- ✅ Validaciones y manejo de errores
+-  Autenticación JWT con roles (USER/ADMIN)
+-  CRUD completo de rutinas de entrenamiento
+-  Gestión de ejercicios por grupos musculares
+-  Sistema de favoritos
+-  Registro de sesiones con sets detallados
+-  Historial completo de entrenamientos
+-  Validaciones y manejo de errores
 
 </details>
 
 <details>
-<summary><b>📱 Frontend Mobile</b></summary>
+<summary><b> Frontend Mobile</b></summary>
 
-- ✅ Diseño minimalista (negro/blanco/rojo)
-- ✅ Autenticación persistente con AsyncStorage
-- ✅ Rutinas predefinidas y personalizadas
-- ✅ Catálogo de 19 ejercicios con filtros
-- ✅ Creación de rutinas con configuración de sets/reps
-- ✅ Entrenamiento en tiempo real con registro de peso
-- ✅ Historial de progreso con estadísticas
-- ✅ Perfil de usuario personalizable
+-  Diseño minimalista (negro/blanco/rojo)
+-  Autenticación persistente con AsyncStorage
+-  Rutinas predefinidas y personalizadas
+-  Catálogo de 19 ejercicios con filtros
+-  Creación de rutinas con configuración de sets/reps
+-  Entrenamiento en tiempo real con registro de peso
+-  Historial de progreso con estadísticas
+-  Perfil de usuario personalizable
 
 </details>
 
 ---
 
-## 🗄️ Modelo de Base de Datos
+##  Modelo de Base de Datos
 
 El sistema utiliza **8 tablas relacionales** en PostgreSQL:
 
@@ -123,7 +123,7 @@ users (autenticación y datos físicos)
 
 ---
 
-## ⚡ Quick Start
+##  Quick Start
 
 ### Requisitos Previos
 
@@ -133,14 +133,14 @@ PostgreSQL >= 15
 Expo Go (app móvil para iOS/Android)
 ```
 
-### 1️⃣ Clonar repositorio
+###  Clonar repositorio
 
 ```bash
 git clone https://github.com/TU-USUARIO/gym-app.git
 cd gym-app
 ```
 
-### 2️⃣ Backend Setup
+###  Backend Setup
 
 ```bash
 cd backend
@@ -165,9 +165,9 @@ node prisma/seed.js
 npm run dev
 ```
 
-✅ Backend corriendo en `http://localhost:3000`
+ Backend corriendo en `http://localhost:3000`
 
-### 3️⃣ Frontend Setup
+###  Frontend Setup
 
 ```bash
 cd frontend
@@ -183,11 +183,11 @@ npm install
 npx expo start
 ```
 
-📱 Escanea el QR con **Expo Go** desde tu dispositivo móvil
+ Escanea el QR con **Expo Go** desde tu dispositivo móvil
 
 ---
 
-## 📚 Documentación Detallada
+##  Documentación Detallada
 
 | Documentación | Descripción |
 |---------------|-------------|
@@ -196,7 +196,7 @@ npx expo start
 
 ---
 
-## 🎨 Paleta de Colores
+##  Paleta de Colores
 
 ```css
 --negro:        #000000  /* Fondo principal */
@@ -209,7 +209,7 @@ npx expo start
 
 ---
 
-## 🔄 Flujo de Usuario
+##  Flujo de Usuario
 
 ```mermaid
 graph LR
@@ -230,7 +230,7 @@ graph LR
 
 ---
 
-## 📡 Endpoints Principales
+##  Endpoints Principales
 
 <details>
 <summary><b>Ver lista completa de endpoints</b></summary>
@@ -275,7 +275,7 @@ PATCH /api/sessions/:id/finish
 
 ---
 
-## 🚧 Roadmap
+##  Roadmap
 
 - [ ] Gráficas de progreso (peso/reps a lo largo del tiempo)
 - [ ] Edición de rutinas existentes
@@ -288,23 +288,23 @@ PATCH /api/sessions/:id/finish
 
 ---
 
-## 🤝 Contribuciones
+##  Contribuciones
 
 Este es un proyecto personal para portafolio. Si encuentras bugs o tienes sugerencias:
 
-1. 🐛 Abre un [Issue](https://github.com/TU-USUARIO/gym-app/issues)
-2. 🔧 Crea un Pull Request
-3. ⭐ Dale una estrella al repo
+1.  Abre un [Issue](https://github.com/TU-USUARIO/gym-app/issues)
+2.  Crea un Pull Request
+3.  Dale una estrella al repo
 
 ---
 
-## 📄 Licencia
+##  Licencia
 
 [MIT License](./LICENSE) - Libre para usar, modificar y distribuir
 
 ---
 
-## 👨‍💻 Autor
+##  Autor
 
 <div align="center">
 
@@ -317,25 +317,17 @@ Este es un proyecto personal para portafolio. Si encuentras bugs o tienes sugere
 
 ---
 
-## 🎯 Habilidades Demostradas
+##  Habilidades Demostradas
 
 Este proyecto full-stack demuestra competencia en:
 
-- ✅ Arquitectura de aplicaciones escalables
-- ✅ Diseño e implementación de APIs REST
-- ✅ Desarrollo móvil multiplataforma
-- ✅ Modelado de bases de datos relacionales
-- ✅ Autenticación y seguridad (JWT, bcrypt)
-- ✅ UI/UX moderno y accesible
-- ✅ Git workflow y versionado
-- ✅ Documentación técnica completa
+-  Arquitectura de aplicaciones escalables
+-  Diseño e implementación de APIs REST
+-  Desarrollo móvil multiplataforma
+-  Modelado de bases de datos relacionales
+-  Autenticación y seguridad (JWT, bcrypt)
+-  UI/UX moderno y accesible
+-  Git workflow y versionado
+-  Documentación técnica completa
 
 ---
-
-<div align="center">
-
-### ⭐ Si este proyecto te pareció útil o interesante, considera darle una estrella
-
-**Desarrollado con ❤️ para demostrar habilidades full-stack**
-
-</div>
